@@ -84,12 +84,12 @@ public class GuestManagementPanel extends JPanel {
 		lblMemo.setBounds(368, 102, 70, 15);
 		add(lblMemo);
 
-		rBtnFemale = new JRadioButton("여자");
+		rBtnFemale = new JRadioButton("여성");
 		buttonGroup.add(rBtnFemale);
 		rBtnFemale.setBounds(446, 27, 60, 23);
 		add(rBtnFemale);
 
-		rBtnMale = new JRadioButton("남자");
+		rBtnMale = new JRadioButton("남성");
 		buttonGroup.add(rBtnMale);
 		rBtnMale.setBounds(510, 27, 60, 23);
 		add(rBtnMale);
@@ -127,7 +127,7 @@ public class GuestManagementPanel extends JPanel {
 
 	// 패널셋 date->string
 	public void setGuest(Guest guest) {
-
+		//tfno 서비스 만들기
 		tfName.setText(guest.getGuestName());
 		tfJoinDay.setText(new SimpleDateFormat("yyyy-MM-dd").format(guest.getJoinDay()));
 		tfPhone.setText(guest.getPhone());
@@ -143,9 +143,11 @@ public class GuestManagementPanel extends JPanel {
 	}
 
 	public void clearTf() {
-		tfNo.setText("");
 		tfName.setText("");
-		dateChooser.setDateFormatString(String.valueOf(""));
+		
+		Date date = new Date();
+		dateChooser.setDateFormatString(String.valueOf(date));
+		
 		tfJoinDay.setText("");
 		tfPhone.setText("");
 		buttonGroup.clearSelection();

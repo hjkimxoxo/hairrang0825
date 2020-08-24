@@ -207,6 +207,7 @@ public class FrameGuest extends JFrame implements ActionListener {
 		System.out.println("취소");
 		pGuest.clearTf();
 		
+		
 	}
 	
 	
